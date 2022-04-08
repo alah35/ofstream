@@ -1,4 +1,5 @@
 int task2() {
+    std::srand(std::time(nullptr));
 	int height, width;
 	std::cout << "Enter the height of the picture:" << std::endl;
 	std::cin >> height;
