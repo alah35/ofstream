@@ -41,7 +41,7 @@ void task1() {
 	std::ofstream table("/home/alah/HomeWorks/ofstream/Tasks/Task1/table.txt");
 	std::string name, surname, date, salary;
 	
-	int n;
+	int n, i;
 	std::cout << "How many records do you want to make?" << std::endl;
 	std::cin >> n;
 	while (n > 0) {
@@ -49,7 +49,7 @@ void task1() {
             		std::cout << "Error. Wrong Path";
             		break;
         	}	
-		std::cout << "Number " << n + 1 << ":" << std::endl;
+		std::cout << "Number " << i + 1 << ":" << std::endl;
 		std::cout << "Enter the name: " << std::endl;
 		std::cin >> name;
 		std::cout << "Enter the surname: " << std::endl;

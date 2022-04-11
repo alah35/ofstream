@@ -41,7 +41,7 @@ int task3() {
 	basket.close(); // delete last fishing results
 	std::vector<std::string> kindOfFishes = {"salmon", "tuna", "carp", "sawfish", "shark",
 	"eel", "dorado", "muskie", "brown"};
-	fill_river(kindOfFishes, addressRiver, 30);	//we are too lazy to do it ourself
+	fill_river(kindOfFishes, addressRiver, 30);	//we are too lazy to do it ourselves
 
 
     bool fishing = true;
@@ -50,7 +50,7 @@ int task3() {
         std::ifstream river(addressRiver);
         check_stream(river);
         std::string fishToCatch;
-		std::cout << "Which kind of fish do you want to cath?" << std::endl;
+		std::cout << "Which kind of fish do you want to caught?" << std::endl;
 		std::cin >> fishToCatch;
 	    while (!river.eof()) {
 		    std::string fishName;

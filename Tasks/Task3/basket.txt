@@ -1,8 +1,6 @@
-tuna
-tuna
-tuna
-tuna
-tuna
-tuna
+carp
+carp
+salmon
+salmon
 salmon
 salmon
