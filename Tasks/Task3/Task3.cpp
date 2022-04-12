@@ -8,7 +8,7 @@ void check_stream(T &fs) {
 	}
 }
 
-int fill_river(std::vector<std::string> &v, std::string path, size_t s) {
+void fill_river(std::vector<std::string> &v, std::string path, size_t s) {
 	std::ofstream river(path);
 	
 	check_stream(river);
@@ -79,4 +79,5 @@ int task3() {
         std::cin >> ans;
         fishing = ans == 'y';
     }
+    return 0;
 }
