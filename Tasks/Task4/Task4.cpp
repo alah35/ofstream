@@ -1,7 +1,7 @@
-void check_atm() {
-    std::ifstream showing("/home/alah/HomeWorks/ofstream/Tasks/Task4/atm_state.bin", std::ios_base::binary);
+void check_atm(std::string path) {
+    std::ifstream showing(path, std::ios_base::binary);
     std::vector<int> buf(10, 0);
-    showing.read((char *) &buf, buf.size() * sizeof(int));
+    showing.read((char *) &buf.front(), buf.size() * sizeof(int));
     showing.close();
     for (int i = 0; i < buf.size(); i++)
         std::cout << buf
@@ -47,7 +47,7 @@ void produce_money(std::string path, int sum, std::vector<int> &vS, const int *b
         sum %= bn[i]; i--;
     }
     std::ofstream producing(path, std::ios_base::binary | std::ios_base::trunc);
-    producing.write((char*) &vS, vS.size() * sizeof(int));
+    producing.write((char*) &vS.front(), vS.size() * sizeof(int));
     producing.close();
     std::cout << "The money was produced." << std::endl;
 }
@@ -59,7 +59,7 @@ void fill_atm(std::string path, std::vector<int> &vS, const int *bn) {
         }
     }
     std::ofstream filling(path, std::ios_base::binary | std::ios_base::trunc);
-    filling.write((char*) &vS, vS.size() * sizeof(int));
+    filling.write((char*) &vS.front(), vS.size() * sizeof(int));
     filling.close();
 }
 
@@ -74,7 +74,7 @@ int task4() {
         switch (action) {
             case '+': {
                 fill_atm(atmAddress, atmState, banknotes);
-//                check_atm();
+                check_atm(atmAddress);
             }
                 break;
                 case '-': {
@@ -83,7 +83,7 @@ int task4() {
                     std::cin >> sum;
                     if (is_possible(sum, atmState, banknotes)) {
                         produce_money(atmAddress, sum, atmState, banknotes);
-//                        check_atm();
+                        check_atm(atmAddress);
                     }
                     else
                         std::cout << "Unable to withdraw this amount" << std::endl;
